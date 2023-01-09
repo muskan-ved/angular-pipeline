@@ -36,7 +36,7 @@ jobs:
       - name: Copy folder content recursively to remote
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: './dist/*'
+          local: 'dist/prototype'
           remote: '/var/www/html/property_pipeline'
           host: ${{ secrets.SFTP_SERVER }}
           port: ${{ secrets.SFTP_PORT }}
