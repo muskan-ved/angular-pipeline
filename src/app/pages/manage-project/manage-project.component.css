@@ -1,0 +1,64 @@
+.content {
+  margin-top: 70px;
+
+}
+
+.pagination-filter {
+  margin: 35px 0px 20px 0px;
+}
+
+.row.pagination-filter input,
+.row.pagination-filter select {
+  width: 40px;
+  border: 1px solid #ccc;
+  margin: 0 10px;
+  height: 30px;
+}
+
+.row.pagination-filter input {
+  padding-left: 5px;
+}
+
+.row.pagination-filter input:focus {
+  outline: none;
+}
+
+::ng-deep .ngx-pagination .current {
+  background: #5664d2 !important;
+}
+
+.pagination-filter .col-lg-6 {
+  padding: 0px;
+  color: #919191;
+}
+.content .card-main {
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: none;
+  border: none;
+  background: #fff;
+}
+.content .card-title {
+  font-weight: 700 !important;
+  color: #414141;
+  margin-bottom: 30px;
+}
+.pagination-filter{
+  justify-content: space-between;
+}
+.content .card {
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+.row.pagination-filter select {
+  width: 64px !important;
+}
+::ng-deep .ngx-pagination {
+  padding-left: 0 !important;
+}
+.content div#navigation {
+  max-width: 250px;
+  float: right;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,76 @@
+<div class="content">
+  <h4 class="card-title">Manage Project Table</h4>
+  <div class="card-main">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive" *ngIf="projectData && projectData.length > 0">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Customer
+              </th>
+              <th>
+                Dates
+              </th>
+              <th>
+                Order Number
+              </th>
+              <th>
+                Complete %
+              </th>
+
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let item of projectData | paginate:{itemsPerPage: itemPerPage,currentPage: currentPageNmuber, totalItems: totalRecord}">
+                <td>
+                  <a routerLink="/customer-details/{{item.id}}">
+
+                    {{item.first_name}}
+                    {{item.last_name}}
+                  </a>
+                </td>
+                <td>
+                  {{item.start_date | date: 'MM/dd/yyyy' }} - {{item.end_date | date: 'MM/dd/yyyy'}}
+                </td>
+                <td>
+                  <a routerLink="/order-details/{{item.order_id}}">
+                    {{item.order_id}}
+                  </a>
+                </td>
+                <td>
+                  {{item.complete_percent}} %
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row pagination-filter" *ngIf="projectData && projectData.length > 10">
+            <div class="col-lg-0">
+              <pagination-controls (pageChange)="pageChanged($event);" previousLabel='previous' nextLabel='next'>
+              </pagination-controls>
+            </div>
+            <div class="col-lg-6 text-right">
+              <span>go to
+                <input type="text" #cPg value="{{ currentPageNmuber }}" (change)="goToPg(cPg.value)">
+              </span>
+              <span>limit per page
+                <select #lPg value="{{ itemPerPage }}" (change)="setItemPerPage(lPg.value)">
+                  <option *ngFor="let limitValue of limitPerPage" value="{{limitValue.value}}">
+                    {{limitValue.value}}
+                  </option>
+                </select>
+              </span>
+              {{ ((currentPageNmuber -1) * itemPerPage) + 1 }} to
+              {{ (currentPageNmuber * itemPerPage) >
+              totalRecord ? totalRecord : (currentPageNmuber * itemPerPage) }}
+              of {{ totalRecord | number }} members
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive" *ngIf="projectData && projectData.length == 0">
+          <p>No Data Found</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

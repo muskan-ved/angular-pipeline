@@ -1,0 +1,86 @@
+<div class="content">
+  <h4 class="card-title">Customer Details</h4>
+  <div class="card-main">
+    <div class="card-body">
+      <div class="back-btn text-right" (click)="onBack()">
+
+        <button class="btn btn-warning">
+          Back
+        </button>
+      </div>
+      <ng-container *ngFor="let item of customerData;let i = index">
+
+        <div class="customer-detail-top">
+          <div class="row" *ngIf="i == 0">
+            <div class="col-md-4 customer-input">
+              <label>First Name</label>
+              <span>{{item.first_name}}</span>
+            </div>
+            <div class="col-md-4 customer-input">
+              <label>Last Name</label>
+              <span>{{item.last_name}}</span>
+            </div>
+            <div class="col-md-4 customer-input">
+              <label>Email Address</label>
+              <span>{{item.email}}</span>
+            </div>
+            <div class="col-md-4 customer-input">
+              <label>Phone Number</label>
+              <span>{{item.phone}}</span>
+            </div>
+            <div class="col-md-4 customer-input">
+              <label>Address</label>
+              <span>{{item.address}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive" *ngIf="item.filename != ''">
+          <table class="table" *ngIf="i == 0">
+            <thead class=" text-primary">
+              <th>
+                Name
+              </th>
+
+              <th class="text-right">
+                Download
+              </th>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let item of customerData| paginate:{itemsPerPage: itemPerPage,currentPage: currentPageNmuber, totalItems: totalRecord};let i = index ">
+                <td>
+                  {{item.filename}}
+                </td>
+                <td class="text-right" (click)="download(item.filename)">
+                  <button class="btn btn-success">Download</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <div class="row pagination-filter" *ngIf="customerData   && customerData.length > 10">
+            <div class="col-lg-0">
+              <pagination-controls (pageChange)="pageChanged($event);" previousLabel='previous' nextLabel='next'>
+              </pagination-controls>
+            </div>
+            <div class="col-lg-6 text-right">
+              <span>go to
+                <input type="text" #cPg value="{{ currentPageNmuber }}" (change)="goToPg(cPg.value)">
+              </span>
+              <span>limit per page
+                <select #lPg value="{{ itemPerPage }}" (change)="setItemPerPage(lPg.value)">
+                  <option *ngFor="let limitValue of limitPerPage" value="{{limitValue.value}}">
+                    {{limitValue.value}}
+                  </option>
+                </select>
+              </span>
+              {{ ((currentPageNmuber -1) * itemPerPage) + 1 }} to
+              {{ (currentPageNmuber * itemPerPage) >
+              totalRecord ? totalRecord : (currentPageNmuber * itemPerPage) }}
+              of {{ totalRecord | number }} members
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>

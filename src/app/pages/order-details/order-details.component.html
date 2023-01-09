@@ -1,0 +1,35 @@
+<div class="content">
+  <h5 class="card-title">Orders Details</h5>
+  <div class="card-main">
+    <div class="back-btn text-right col-md-12" (click)="onBack()">
+
+      <button class="btn btn-warning ">
+        Back
+      </button>
+    </div>
+    <div class="card-body" *ngFor="let item of orderData;let i = index">
+      <div class="row" *ngIf="i == 0">
+        <div class="col-md-4 customer-input">
+          <label>Project Name</label>
+          <span>{{item.project_name}}</span>
+        </div>
+        <div class="col-md-4 customer-input">
+          <label>Project Description</label>
+          <span>{{item.project_description}}</span>
+        </div>
+        <div class="col-md-4 customer-input">
+          <label>Start Date</label>
+          <span>{{item.start_date | date: 'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="col-md-4 customer-input">
+          <label>End Date</label>
+          <span>{{item.end_date | date: 'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="col-md-4 customer-input">
+          <label>Complete Percent</label>
+          <span>{{item.complete_percent}} %</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

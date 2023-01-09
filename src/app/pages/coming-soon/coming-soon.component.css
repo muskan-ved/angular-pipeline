@@ -1,0 +1,13 @@
+.coming-soon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+.coming-soon h1 {
+    font-size: 70px;
+    font-weight: 800;
+    color: rgb(173 173 173);
+    opacity: 0.3;
+}

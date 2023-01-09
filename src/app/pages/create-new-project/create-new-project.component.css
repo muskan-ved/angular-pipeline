@@ -1,0 +1,136 @@
+.content{
+  margin-top: 70px;
+}
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+.content .card-main {
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: none;
+  border: none;
+  background: #fff;
+}
+.update button {
+  background: orange !important;
+  border-color: orange;
+}
+.update .btn:disabled {
+  background: #bdbdbd !important;
+}
+.card.card-user {
+  min-height: 599px;
+}
+::ng-deep .mat-step-header .mat-step-icon {
+  width: 40px;
+  height: 40px;
+}
+::ng-deep .mat-horizontal-stepper-header-container {
+  max-width: 1024px;
+  margin: 0 auto 50px auto;
+}
+
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+.error {
+    color: #f00;
+}
+
+.dragarea {
+    font-size: 1.5rem;
+    border: 1px dashed #979797;
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.droparea {
+  font-size: 1.5rem;
+  border: 3px dashed #bbb;
+  padding: 1.5rem;
+  background-color: #eff;
+  color: #aaa;
+}
+
+/* upload css start */
+.dropZone h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #38424c;
+}
+.dropZone label {
+  color: #fff;
+  width: 183px;
+  height: 44px;
+  border-radius: 21.5px;
+  background-color: #2096db;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 29px;
+}
+.document-upload-process {
+  margin-bottom: 50px;
+}
+/* docuement table css */
+.content-document .card label {
+  margin-left: 10px;
+}
+.content-document .card input {
+  width: 18px;
+  height: 17px;
+  position: relative;
+  top: 4px;
+}
+a.cancel_btn {
+  width: 24px;
+  height: 24px;
+  background: #ff4949;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #ffff;
+  cursor: pointer;
+}
+.download-btn{
+  font-size: 14px;
+}
+.modal-footer .btn-secondary {
+  background: #ff4949;
+  border-color: #ff4949;
+  font-weight: 600;
+}
+.modal-footer .btn-primary {
+  background: #44bb46;
+  border-color: #44bb46;
+  font-weight: 600;
+}
+.modal-footer .btn-secondary:focus, .modal-footer .btn-secondary:hover {
+  background: #ff4949 !important;
+  border-color: #ff4949 !important;
+  font-weight: 600;
+}
+.modal-footer .btn-primary:focus, .modal-footer .btn-primary:hover {
+  background: #44bb46 !important;
+  border-color: #44bb46 !important;
+  font-weight: 600;
+}
+::ng-deep .mat-step-icon-content {
+  font-weight: 600;
+}
+
+.notes {
+  color: #f00;
+  font-size: 15px;
+}
+.document-heading{
+  margin-bottom: 0;
+}

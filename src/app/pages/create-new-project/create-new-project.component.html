@@ -1,0 +1,441 @@
+<div class="content">
+  <div class="card-main">
+    <mat-stepper linear #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmitFirstForm()">
+          <ng-template matStepLabel>Step-1</ng-template>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-user">
+                <div class="card-header">
+                  <h5 class="card-title">Customer Details</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" placeholder="First Name" name="firstName"
+                          formControlName="firstName"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['firstName'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['firstName'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.firstName">
+                          <span>{{msg.firstName}}</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name" name="lastName"
+                          formControlName="lastName"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['lastName'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['lastName'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.lastName">
+                          <span>{{msg.lastName}}</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" placeholder="Email" name="email"
+                          formControlName="email"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['email'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['email'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.email">
+                          <span>{{msg.email}}</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" placeholder="Phone Number" name="phone"
+                          formControlName="phone"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['phone'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['phone'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" *ngIf="formControlsFirst['phone'].errors?.['minlength']">
+                          Minimum Lenght of the phone number must be 10.
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.phone">
+                          <span>{{msg.phone}}</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" placeholder="Address" name="address"
+                          formControlName="address"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['address'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['address'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.address">
+                          <span>{{msg.address}}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-header">
+                  <h5 class="card-title">Project Information</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Project Name</label>
+                        <input type="email" class="form-control" placeholder="Project Name" name="projectName"
+                          formControlName="projectName"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['projectName'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['projectName'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.projectName">
+                          <span>{{msg.projectName}}</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Complete Percent</label>
+                        <input type="number" class="form-control" placeholder="Complete Percent"
+                          formControlName="completePercent"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['completePercent'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['completePercent'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.completePercent">
+                          <span>{{msg.completePercent}}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" class="form-control" name="startDate" formControlName="startDate"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['startDate'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['startDate'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.startDate">
+                          <span>{{msg.startDate}}</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" class="form-control" name="endDate" formControlName="endDate"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['endDate'].errors }">
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['endDate'].errors">
+                          This field is required
+                        </span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.endDate">
+                          <span>{{msg.endDate}}</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea class="form-control textarea" name="projectDescription"
+                          formControlName="projectDescription"
+                          [ngClass]="{ 'is-invalid': isSubmitted && formControlsFirst['projectDescription'].errors }">
+                        </textarea>
+                        <span class="danger" *ngIf="isSubmitted && formControlsFirst['projectDescription'].errors"> This
+                          field is required</span>
+                        <span class="danger" role="alert" *ngIf="msg && msg.projectDescription">
+                          <span>{{msg.projectDescription}}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="panel col-md-12" *ngIf="errorForm == true || successForm  == true">
+              <div class="panel-body">
+                <div class="alert alert-danger" role="alert" *ngIf="errorForm == true">
+                  <span>{{message}}</span>
+                </div>
+                <div class="alert alert-success" role="alert" *ngIf="successForm == true">
+                  <span>{{message}}</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="update col-md-6">
+              <button type="button" class="btn btn-primary btn-round" disabled mat-button
+                matStepperPrevious>Back</button>
+            </div>
+
+            <div class="update text-right col-md-6">
+              <button type="submit" class="btn btn-primary btn-round" (click)="goForward(stepper)"
+                (click)="next()">Next</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Step-2</ng-template>
+          <div class="col-md-12">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title document-heading">Document uploades</h5>
+                <span class="notes"> (Only pdf, doc, csv, docx, txt, xlsx, xls, jpeg, jpg, png
+                  file is allowed)</span>
+              </div>
+              <div class="card-body">
+                <div class="panel" *ngIf="error == true || success == true">
+                  <div class="panel-body">
+                    <div class="alert alert-danger" role="alert" *ngIf="error == true">
+                      <span>{{message}}</span>
+                    </div>
+                    <div class="alert alert-success" role="alert" *ngIf="success == true">
+                      <span>{{message}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div draggable="true" ngClass="{{dragAreaClass}}">
+                  <div class="row">
+                    <div class="col-md-12 text-center dropZone">
+                      <img _ngcontent-gkb-c90=""
+                        src="data:image/png;base64, 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"
+                        width="50px">
+                      <h3>Drag and drop file here </h3>
+                      <h3>or</h3>
+                      <label href="javascript:void(0)" (click)="file.click()">
+                        Browse for file
+                      </label>
+                      <input type="file" #file [multiple]="true" (change)="selectFiles($event)" style="display:none" />
+                    </div>
+                  </div>
+                </div>
+                <span class="danger" *ngIf="isSubmitted && formControlsSecond['document'].errors">
+                  This field is required
+                </span>
+                <span class="danger" *ngIf="errorDocumentUpload.isError">
+                  {{ errorDocumentUpload.errorMessage }}
+                </span>
+                <br>
+                <div class="document-upload-process">
+                  <div *ngFor="let progressInfo of progressInfos" class="mb-3">
+                    <span>{{ progressInfo.fileName }}</span>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                        attr.aria-valuenow="{{ progressInfo.value }}" aria-valuemin="0" aria-valuemax="100"
+                        [ngStyle]="{ width: progressInfo.value + '%' }">
+                        {{ progressInfo.value }}%
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngFor="let progressInfo of progress" class="mb-3">
+                    <span>{{ progressInfo.fileName }}</span>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                        attr.aria-valuenow="{{ progressInfo.value }}" aria-valuemin="0" aria-valuemax="100"
+                        [ngStyle]="{ width: progressInfo.value + '%' }">
+                        {{ progressInfo.value }}%
+                      </div>
+                    </div>
+                  </div>
+                  <span class="danger" *ngIf="errorDocument.isError">
+                    {{ errorDocument.errorMessage }}
+                  </span>
+                </div>
+                <div class="row">
+                  <br>
+                  <div class="update col-md-6">
+                    <button type="button" class="btn btn-primary btn-round" mat-button matStepperPrevious
+                      (click)="back()">Back</button>
+                  </div>
+                  <div class="update text-right col-md-6">
+                    <button type="button" class="btn btn-primary btn-round" (click)="goDocumentForward(stepper)"
+                      (click)="next()">Next</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Step-3</ng-template>
+        <div class="content-document">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Documents</h4>
+                </div>
+                <div class="card-body">
+                  <div class="panel" *ngIf="error == true || success == true">
+                    <div class="panel-body">
+                      <div class="alert alert-danger" role="alert" *ngIf="error == true">
+                        <span>{{message}}</span>
+                      </div>
+                      <div class="alert alert-success" role="alert" *ngIf="success == true">
+                        <span>{{message}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive" *ngIf="tableData && tableData.length > 0">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          OCR
+                        </th>
+                        <th>
+                          Delete
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of tableData; let i = index">
+                          <td>
+                            {{item.filename}}
+                          </td>
+                          <td>
+                            <input type="checkbox" [id]="'checkBox'+i">
+                            <label [for]="'checkBox'+i">English</label>
+                          </td>
+                          <td (click)="confirmDialog(item.document_id)">
+                            <a class="cancel_btn"> X</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="table-responsive" *ngIf="tableData && tableData.length == 0">
+                    <p>No Data Found</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="update col-md-6">
+            <button type="button" class="btn btn-primary btn-round" mat-button matStepperPrevious>Back</button>
+          </div>
+          <div class="update text-right col-md-6">
+            <button type="submit" class="btn btn-primary btn-round" mat-button matStepperNext>Next</button>
+          </div>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Step-4</ng-template>
+        <div class="content-document">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Documents</h4>
+                </div>
+                <div class="card-body">
+                  <div class="panel" *ngIf="error == true || success == true">
+                    <div class="panel-body">
+                      <div class="alert alert-danger" role="alert" *ngIf="error == true">
+                        <span>{{message}}</span>
+                      </div>
+                      <div class="alert alert-success" role="alert" *ngIf="success == true">
+                        <span>{{message}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive" *ngIf="tableData && tableData.length > 0">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          OCR
+                        </th>
+                        <th class="text-right">
+                          Download
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of tableData; let i = index">
+                          <td>
+                            {{item.filename}}
+                          </td>
+                          <td>
+                            <input type="checkbox" [id]="'checkBox'+i">
+                            <label [for]="'checkBox'+i">English</label>
+                          </td>
+                          <td class="text-right" (click)="download(item.filename)">
+                            <button class="btn btn-success download-btn"> download</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="table-responsive" *ngIf="tableData && tableData.length == 0">
+                    <p>No Data Found</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="update col-md-6">
+            <button type="button" class="btn btn-primary btn-round" mat-button matStepperPrevious>Back</button>
+          </div>
+          <div class="update col-md-6 text-right">
+            <button type="submit" class="btn btn-primary btn-round" mat-button matStepperNext
+              (click)="lastStep()">Finish</button>
+          </div>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Document</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want delete this document?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="deleteDoc('no')">No</button>
+        <button type="button" class="btn btn-primary" (click)="deleteDoc('yes')">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

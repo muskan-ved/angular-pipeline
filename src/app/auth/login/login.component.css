@@ -1,0 +1,141 @@
+main {
+  height: 100vh;
+  background: #fff;
+}
+
+main .row {
+  margin: 0;
+}
+
+main .col-md-6 {
+  padding: 0;
+}
+
+.message-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form-main {
+  height: 100vh;
+}
+
+.login-form-main .card {
+  min-width: 500px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  left: 50%;
+}
+
+.login-message-main {
+  background: #4b56c0;
+}
+
+.message-caption {
+  color: white;
+}
+
+.message-caption h1,
+.login-form-main h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: clamp(32px, 4vw, 46px);
+}
+
+.login-form-main .card {
+  box-shadow: none;
+  border: none;
+}
+
+.login-form-main label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.login-form-main input {
+  height: 50px;
+  background: #fff !important;
+}
+
+.login-form-main h1 {
+  color: #fe7f2d;
+}
+
+.message-caption p {
+  line-height: 2rem;
+  margin-bottom: 0;
+}
+
+.message-caption .btn-enter,
+.login-form-main button {
+  width: 240px;
+  height: 55px;
+  font-size: 1.2rem;
+  background: #fe7f2d;
+  color: white;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 0;
+}
+.message-caption .btn-enter:hover,
+.login-form-main button:hover{
+  background: #d1661f !important;
+}
+.message-image {
+  max-width: 380px;
+  margin: 0 auto;
+}
+.message-inner {
+  text-align: center;
+}
+
+.form-group.form-check {
+  padding: 0;
+}
+
+.form-group.form-check a {
+  color: #fe7f2d;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.login-form-main button {
+  width: 100%;
+}
+.form-group {
+  margin-bottom: 2rem;
+}
+.login-form-main button:focus, .login-form-main button:visited {
+  background: #fe7f2d !important;
+}
+.alert.alert-danger {
+  background-color: #ffc5c5;
+}
+@media (max-width:767px) {
+
+  .message-caption,
+  .login-form-main .card {
+    position: inherit;
+    transform: inherit;
+    left: inherit;
+    top: inherit;
+  }
+
+  .login-form-main .card {
+    min-width: 100%;
+  }
+
+  .message-inner {
+    padding: 10rem 0;
+  }
+
+  main .row {
+    flex-direction: column-reverse;
+  }
+}

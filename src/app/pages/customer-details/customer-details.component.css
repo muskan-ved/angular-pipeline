@@ -1,0 +1,78 @@
+.customer-detail-top label {
+  font-size: 18px;
+  color: #414141;
+}
+.customer-detail-top {
+  margin-bottom: 30px;
+}
+.card-main {
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: none;
+  border: none;
+  background: #fff;
+}
+.content .card-title {
+  font-weight: 700 !important;
+  color: #414141;
+  margin-bottom: 30px;
+}
+.pagination-filter {
+  margin: 35px 0px 20px 0px;
+}
+
+.row.pagination-filter input,
+.row.pagination-filter select {
+  width: 40px;
+  border: 1px solid #ccc;
+  margin: 0 10px;
+  height: 30px;
+}
+
+.row.pagination-filter input {
+  padding-left: 5px;
+}
+
+.row.pagination-filter input:focus {
+  outline: none;
+}
+
+::ng-deep .ngx-pagination .current {
+  background: #5664d2 !important;
+}
+
+.pagination-filter .col-lg-6 {
+  padding: 0px;
+  color: #919191;
+}
+.row.pagination-filter select {
+  width: 64px !important;
+}
+::ng-deep .ngx-pagination {
+  padding-left: 0 !important;
+}
+.pagination-filter {
+  justify-content: space-between;
+}
+.customer-detail-top label {
+  font-size: 18px !important;
+}
+.customer-input label {
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+    color: #000;
+}
+.customer-input span {
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(228deg 29% 56%);
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e2edff;
+    border-radius: 5px;
+    height: 50px;
+    margin-bottom: 15px;
+    background: #f2f7ff;
+}
